@@ -18,7 +18,13 @@ listaInversa :: [Int]->[Int]
 listaInversa [] = []
 listaInversa (x : xs) = listaInversa(xs)++[x] 
 
+listaInversa2 :: [Int]->[Int]
+listaInversa2 = aux []
+    where
+        aux ys []       = ys
+        aux ys (x:xs)   = aux (x:ys) xs
+
 sommaCongiunta :: [Int] -> [Int] -> [Int]
-sommaCongiunta (x : xs) (y : ys) | xs == []  = [x+y]
-                                 | ys == []  = [x+y]
-                                 | otherwise = [x + y] ++ sommaCongiunta xs ys
+sommaCongiunta []       _        = []
+sommaCongiunta _        []       = []
+sommaCongiunta (x : xs) (y : ys) = (x + y) : sommaCongiunta xs ys
