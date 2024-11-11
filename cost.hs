@@ -5,6 +5,7 @@ testa :: [Int] -> ForseInt
 testa [] = Niente
 testa (x : xs) = Proprio x
 
+-- ↓
 data Numero = In Int | Fl Float deriving (Show)
 
 somma :: Numero -> Numero -> Numero
@@ -15,6 +16,8 @@ somma (Fl x) (Fl y) = Fl (x + y)
 
 sommatoria :: [Numero] -> Numero
 sommatoria = foldr somma (In 0)
+
+-- ↑
 
 proprio :: [ForseInt] -> [Int]
 proprio [] = []
