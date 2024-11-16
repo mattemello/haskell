@@ -6,4 +6,4 @@ takeInput =
       else takeInput >>= \st -> return (s ++ " " ++ st)
 
 main :: IO ()
-main = takeInput >>= (putStrLn)
+main = takeInput >>= putStrLn
